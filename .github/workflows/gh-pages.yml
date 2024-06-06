@@ -36,9 +36,9 @@ jobs:
         cd .massivewikibuilder/massivewikibuilder
         ./mwb.py -c ../mwb.yaml -w ../.. -o ../.. -t ../this-wiki-themes/dolce --lunr --commits
 
-    - name: add a nojekyll file
-      run: touch $GITHUB_WORKSPACE/output/.nojekyll
-      
+#    - name: add a nojekyll file
+#      run: touch $GITHUB_WORKSPACE/output/.nojekyll
+#      
     - name: Deploy to Github Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
