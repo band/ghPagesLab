@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>All Pages - ghPagesLab</title>
+    <link rel="stylesheet" href="/mwb-static/css/style.css">
+    <link rel="stylesheet" href="/mwb-static/css/custom.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+    <script src="/lunr-index-1717685510.2911587.js"></script>
+    <script>var index = lunr.Index.load(lunr_index)</script>
+    
+    
+    <script src="/lunr-posts-1717685510.2911587.js"></script>
+    
+  </head>
+<body class="has-navbar-fixed-top">
+  <nav class="navbar is-fixed-top is-info" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <div class="is-size-3 is-uppercase has-text-weight-light">ghPagesLab</div>
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasic" class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item">
+	<div class="buttons">
+	  <a class="button is-primary" href="/">
+	    <strong>Home</strong>
+	  </a>
+	  <a class="button is-light" href="/all-pages.html">
+	    All Pages
+	  </a>
+	  
+	  <a class="button is-light" onclick="location.href=lunr_posts[Math.floor(Math.random() * lunr_posts.length)].link">
+	    Random Page
+	  </a>
+	  
+	  
+	  <a class="button is-light" href="/search.html">
+	    Search
+	  </a>
+	  
+	</div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+      </div>
+    </div>
+  </div>
+</nav>
+  <link href='https://unpkg.com/gridjs/dist/theme/mermaid.min.css' rel='stylesheet'>
+  <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        new gridjs.Grid({
+            from: document.getElementById('sourceTable'),
+            sort: true,
+            fixedHeader: true,
+            search: true,
+            autoWidth: true,
+            language: {
+                'search': {
+                    'placeholder': '🔍 Search this table...'
+                }
+            }
+        }).render(document.getElementById('destinationWrapper'));
+    });
+  </script>
+
+  <div id='allPagesTableWrapper'>
+  <div id='destinationWrapper'></div>
+
+  <table id='sourceTable'>
+
+    <thead>
+      <tr>
+        <th>Page</th>
+        <th>Change</th>
+        <th>By</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      
+      <tr>
+        <td><a href="/A.R._Moxon_-_What_is_a_socialist.html">A.R. Moxon - What is a socialist</a></td>
+        <td>production trial 01</td>
+        <td>Willliam L. Anderson</td>
+        <td>2024-06-06, 14:51</td>
+      </tr>
+      <tr>
+        <td><a href="/AI_Causes_Real_Harm._Lets_Focus_on_That_over_the_End-of-Humanity_Hype.html">AI Causes Real Harm. Lets Focus on That over the End-of-Humanity Hype</a></td>
+        <td>production trial 01</td>
+        <td>Willliam L. Anderson</td>
+        <td>2024-06-06, 14:51</td>
+      </tr>
+      <tr>
+        <td><a href="/linking_is_like_thinking.html">linking is like thinking</a></td>
+        <td>production trial 01</td>
+        <td>Willliam L. Anderson</td>
+        <td>2024-06-06, 14:51</td>
+      </tr>
+      <tr>
+        <td><a href="/README.html">README</a></td>
+        <td>production trial 01</td>
+        <td>Willliam L. Anderson</td>
+        <td>2024-06-06, 14:51</td>
+      </tr>
+      <tr>
+        <td><a href="/Sidebar.html">Sidebar</a></td>
+        <td>production trial 01</td>
+        <td>Willliam L. Anderson</td>
+        <td>2024-06-06, 14:51</td>
+      </tr>
+      <tr>
+        <td><a href="/to-do_list_and_notes.html">to-do list and notes</a></td>
+        <td>production trial 01</td>
+        <td>Willliam L. Anderson</td>
+        <td>2024-06-06, 14:51</td>
+      </tr></tbody>
+  </table>
+  </div>
+  <script>// ensure the DOM is loaded, for things that need it
+document.addEventListener('DOMContentLoaded', () => {
+
+  ////////////////////////////////////////////////////////////////
+  // Bulma navbar helpers
+  ////////////////////////////////////////////////////////////////
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});</script>
+</body>
+</html>
