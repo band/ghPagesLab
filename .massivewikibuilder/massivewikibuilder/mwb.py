@@ -137,8 +137,9 @@ def main():
     dir_templates = Path(args.templates).resolve().as_posix()
     rootdir = '/'
     dir_output = Path(args.output).resolve().as_posix()
-    websiteroot = '/'
-    logging.debug("web_root: %s", web_root)
+    logging.debug("website root directory: %s", config['webrootdir'])
+    websiteroot = config['webrootdir']
+    logging.debug("websiteroot: %s", websiteroot)
     logging.debug("dir_output: %s", dir_output)
 
     # get a Jinja2 environment

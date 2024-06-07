@@ -15,3 +15,6 @@ recent_changes_count: 5
 
 # the markdown page which will be handled as a sidebar page
 sidebar: Sidebar.md
+
+# the name of the website root directory
+webrootdir: '/ghPagesLab'
