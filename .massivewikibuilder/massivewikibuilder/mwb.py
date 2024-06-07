@@ -150,10 +150,10 @@ def main():
         timestamp_thisrun = time.time()
         lunr_index_filename = f"lunr-index-{timestamp_thisrun}.js" # needed for next two variables
         lunr_index_filepath = Path(dir_output) / lunr_index_filename # local filesystem
-        lunr_index_sitepath = websiteroot +lunr_index_filename # website
+        lunr_index_sitepath = f"{websiteroot}/{lunr_index_filename}" # website
         lunr_posts_filename = f"lunr-posts-{timestamp_thisrun}.js" # needed for next two variables
         lunr_posts_filepath = Path(dir_output) / lunr_posts_filename # local filesystem
-        lunr_posts_sitepath = websiteroot +lunr_posts_filename # website
+        lunr_posts_sitepath = f"{websiteroot}/{lunr_posts_filename}" # website
     else:
         # needed to feed to themes
         lunr_index_sitepath = ''
