@@ -137,7 +137,7 @@ def main():
     dir_templates = Path(args.templates).resolve().as_posix()
     rootdir = '/'
     dir_output = Path(args.output).resolve().as_posix()
-    web_root = '/'
+    websiteroot = '/'
     logging.debug("web_root: %s", web_root)
     logging.debug("dir_output: %s", dir_output)
 
@@ -149,10 +149,10 @@ def main():
         timestamp_thisrun = time.time()
         lunr_index_filename = f"lunr-index-{timestamp_thisrun}.js" # needed for next two variables
         lunr_index_filepath = Path(dir_output) / lunr_index_filename # local filesystem
-        lunr_index_sitepath = web_root +lunr_index_filename # website
+        lunr_index_sitepath = websiteroot +lunr_index_filename # website
         lunr_posts_filename = f"lunr-posts-{timestamp_thisrun}.js" # needed for next two variables
         lunr_posts_filepath = Path(dir_output) / lunr_posts_filename # local filesystem
-        lunr_posts_sitepath = web_root +lunr_posts_filename # website
+        lunr_posts_sitepath = websiteroot +lunr_posts_filename # website
     else:
         # needed to feed to themes
         lunr_index_sitepath = ''
@@ -253,7 +253,7 @@ def main():
                     backlinks=wiki_pagelinks.get(Path(file).stem.lower())['backlinks'],
                     lunr_index_sitepath=lunr_index_sitepath,
                     lunr_posts_sitepath=lunr_posts_sitepath,
-                    webrootdir='/ghPagesLab',
+                    websiteroot=websiteroot,
                 )
                 (Path(dir_output+clean_filepath).with_suffix(".html")).write_text(html)
                 
