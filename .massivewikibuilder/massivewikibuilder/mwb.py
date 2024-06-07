@@ -253,6 +253,7 @@ def main():
                     backlinks=wiki_pagelinks.get(Path(file).stem.lower())['backlinks'],
                     lunr_index_sitepath=lunr_index_sitepath,
                     lunr_posts_sitepath=lunr_posts_sitepath,
+                    webrootdir='/ghPagesLab',
                 )
                 (Path(dir_output+clean_filepath).with_suffix(".html")).write_text(html)
                 
