@@ -12,3 +12,7 @@
  - major drawbacks are:
 	 - 1. CSS is not applied to the webpages even though it appears to be sitting right there
 	 - 2. the repo name needs to be at the front of all the hrefs, and that needs to be tracked down inside `mwb.py`  
+
+2024-06-07:  
+ - with PK's help we have some notions of clarifying the properties our model of a MassiveWiki and associated static website  
+	 - specifically, the website root directory and it's place in links and wikilinks -- it takes some thinking ....
