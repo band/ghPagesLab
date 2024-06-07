@@ -34,7 +34,7 @@ jobs:
     - name: Build website
       run: |
         cd .massivewikibuilder/massivewikibuilder
-        ./mwb.py -c ../mwb.yaml -w ../.. -o $GITHUB_WORKSPACE/output -t ../this-wiki-themes/dolce --lunr --commits
+        ./mwb.py -c ../mwb.yaml -w ../.. -o ../../output -t ../this-wiki-themes/dolce --lunr --commits
 
     - name: add a nojekyll file
       run: touch $GITHUB_WORKSPACE/output/.nojekyll
