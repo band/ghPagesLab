@@ -81,7 +81,7 @@ class MassiveWikiRenderer(HTMLRenderer):
         logging.debug("WIKILINKED wikilink_value: %s", wikilink_value)
         if wikilink_value:
             inner = Path(wikilink_value['html_path']).relative_to(self._rootdir).as_posix()
-            template = '<a class="wikilink" href="{rootdir}{inner}">{target}</a>'
+            template = '<a class="wikilink" href="/ghPagesLab{rootdir}{inner}">{target}</a>'
         else:
             inner = self.render_inner(token)
             template = '<span class="incipient-wikilink">{target}</span>'
