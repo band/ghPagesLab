@@ -175,7 +175,8 @@ def main():
         lunr_posts=[]
         for file in allfiles:
             logging.debug("file %s: ", file)
-            fs_path = rootdir+Path(file).relative_to(dir_wiki).as_posix()
+            fs_path = '/'+Path(file).relative_to(dir_wiki).as_posix()
+#            fs_path = rootdir+Path(file).relative_to(dir_wiki).as_posix()
             clean_filepath = scrub_path(fs_path)
             if Path(file).suffix == '.md':
                 logging.debug("key: %s", Path(file).name)
