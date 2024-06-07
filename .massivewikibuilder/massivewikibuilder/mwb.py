@@ -365,6 +365,7 @@ def main():
             sidebar_body=sidebar_body,
             lunr_index_sitepath=lunr_index_sitepath,
             lunr_posts_sitepath=lunr_posts_sitepath,
+            websiteroot=websiteroot,
         )
         (Path(dir_output) / "recent-pages.html").write_text(html)
 
