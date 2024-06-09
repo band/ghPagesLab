@@ -61,7 +61,7 @@ class MassiveWikiRenderer(HTMLRenderer):
     Properties:
         links (array of strings, read-only): all of the double square bracket link targets found in this invocation.
     """
-    def __init__(self, rootdir='/', fileroot='.', wikilinks={}, file_id=''):
+    def __init__(self, rootdir='/', fileroot='.', wikilinks={}, file_id='', websiteroot=''):
         super().__init__(*chain([TranscludedDoubleSquareBracketLink,EmbeddedImageDoubleSquareBracketLink,DoubleSquareBracketLink]))
         self._rootdir = rootdir
         self._fileroot = fileroot
@@ -69,6 +69,7 @@ class MassiveWikiRenderer(HTMLRenderer):
         self._file_id = file_id
         self._tc_dict = dict.fromkeys([self._file_id], [])
         self._tc_dict[self._file_id].append(self._file_id)
+        self._websiteroot = websiteroot
 
     def render_double_square_bracket_link(self, token):
         logging.debug("WIKILINKED token: %s", token)
@@ -81,12 +82,12 @@ class MassiveWikiRenderer(HTMLRenderer):
         logging.debug("WIKILINKED wikilink_value: %s", wikilink_value)
         if wikilink_value:
             inner = Path(wikilink_value['html_path']).relative_to(self._rootdir).as_posix()
-            template = '<a class="wikilink" href="/ghPagesLab{rootdir}{inner}">{target}</a>'
+            template = '<a class="wikilink" href="{websiteroot}{rootdir}{inner}">{target}</a>'
         else:
             inner = self.render_inner(token)
             template = '<span class="incipient-wikilink">{target}</span>'
         logging.debug("WIKILINKED inner: %s", inner)
-        return template.format(target=target, inner=inner, rootdir=self._rootdir)
+        return template.format(target=target, inner=inner, rootdir=self._rootdir, websiteroot=self._websiteroot)
 
     def render_embedded_image_double_square_bracket_link(self, token):
         logging.debug("EMBEDDED token: %s", token)
