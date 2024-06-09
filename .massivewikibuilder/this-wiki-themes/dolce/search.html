@@ -32,7 +32,7 @@
 <!--    {% include '_footer.html' %}  -->
     <script>{% include '_javascript.html' %}</script>
     <script>
-      const websiteroot = document.getElementById("websiteroot");
+      const websiteroot = document.getElementById("websiteroot").textContent;
       function doSearch() {
 	  let searchString=document.getElementById("inputID").value;
 	  var ul = document.createElement('ul');
