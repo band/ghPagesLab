@@ -9,136 +9,110 @@
     <link rel="stylesheet" href="/ghPagesLab/mwb-static/css/custom.css">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
-    <script src="/ghPagesLab/lunr-index-1717964071.3078096.js"></script>
+    <script src="/ghPagesLab/lunr-index-1717965056.645303.js"></script>
     <script>var index = lunr.Index.load(lunr_index)</script>
     
     
-    <script src="/ghPagesLab/lunr-posts-1717964071.3078096.js"></script>
+    <script src="/ghPagesLab/lunr-posts-1717965056.645303.js"></script>
     
   </head>
 <body>
-  <nav class="navbar is-fixed-top is-info" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <div class="is-size-3 is-uppercase has-text-weight-light">ghPagesLab</div>
-    </a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
+  <div id="header">
+    <span id="hamburger-btn" class="hidden">&#9776;</span> ghPagesLab
   </div>
 
-  <div id="navbarBasic" class="navbar-menu">
-    <div class="navbar-start">
-      <div class="navbar-item">
-	<div class="buttons">
-	  <a class="button is-primary" href="/">
-	    <strong>Home</strong>
-	  </a>
-	  <a class="button is-light" href="/all-pages.html">
-	    All Pages
-	  </a>
-	  
-	  <a class="button is-light" onclick="location.href=lunr_posts[Math.floor(Math.random() * lunr_posts.length)].link">
-	    Random Page
-	  </a>
-	  
-	  
-	  <a class="button is-light" href="/search.html">
-	    Search
-	  </a>
-	  
-	</div>
+  <div class="container" id="flex-container">
+    <div id="side-column">
+      <div>
+        <button id="hide-btn">Hide</button>
+        <button id="move-btn" class="hidden">Move to Sidebar</button>
       </div>
-    </div>
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-      </div>
-    </div>
-  </div>
-</nav>
-  <link href='https://unpkg.com/gridjs/dist/theme/mermaid.min.css' rel='stylesheet'>
-  <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        new gridjs.Grid({
-            from: document.getElementById('sourceTable'),
-            sort: true,
-            fixedHeader: true,
-            search: true,
-            autoWidth: true,
-            language: {
-                'search': {
-                    'placeholder': '🔍 Search this table...'
-                }
-            }
-        }).render(document.getElementById('destinationWrapper'));
-    });
-  </script>
-
-  <div id='allPagesTableWrapper'>
-  <div id='destinationWrapper'></div>
-
-  <table id='sourceTable'>
-
-    <thead>
-      <tr>
-        <th>Page</th>
-        <th>Change</th>
-        <th>By</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-
-    <tbody>
       
-      <tr>
-        <td><a href="/ghPagesLab/A.R._Moxon_-_What_is_a_socialist.html">A.R. Moxon - What is a socialist</a></td>
-        <td>incorporate websiteroot in search results - trial 2</td>
-        <td>Willliam L. Anderson</td>
-        <td>2024-06-09, 20:14</td>
-      </tr>
-      <tr>
-        <td><a href="/ghPagesLab/AI_Causes_Real_Harm._Lets_Focus_on_That_over_the_End-of-Humanity_Hype.html">AI Causes Real Harm. Lets Focus on That over the End-of-Humanity Hype</a></td>
-        <td>incorporate websiteroot in search results - trial 2</td>
-        <td>Willliam L. Anderson</td>
-        <td>2024-06-09, 20:14</td>
-      </tr>
-      <tr>
-        <td><a href="/ghPagesLab/linking_is_like_thinking.html">linking is like thinking</a></td>
-        <td>incorporate websiteroot in search results - trial 2</td>
-        <td>Willliam L. Anderson</td>
-        <td>2024-06-09, 20:14</td>
-      </tr>
-      <tr>
-        <td><a href="/ghPagesLab/MaryRuefle-Nettles.html">MaryRuefle-Nettles</a></td>
-        <td>incorporate websiteroot in search results - trial 2</td>
-        <td>Willliam L. Anderson</td>
-        <td>2024-06-09, 20:14</td>
-      </tr>
-      <tr>
-        <td><a href="/ghPagesLab/README.html">README</a></td>
-        <td>incorporate websiteroot in search results - trial 2</td>
-        <td>Willliam L. Anderson</td>
-        <td>2024-06-09, 20:14</td>
-      </tr>
-      <tr>
-        <td><a href="/ghPagesLab/Sidebar.html">Sidebar</a></td>
-        <td>incorporate websiteroot in search results - trial 2</td>
-        <td>Willliam L. Anderson</td>
-        <td>2024-06-09, 20:14</td>
-      </tr>
-      <tr>
-        <td><a href="/ghPagesLab/to-do_list_and_notes.html">to-do list and notes</a></td>
-        <td>incorporate websiteroot in search results - trial 2</td>
-        <td>Willliam L. Anderson</td>
-        <td>2024-06-09, 20:14</td>
-      </tr></tbody>
-  </table>
+    </div>
+
+    <div id="main-column">
+      <link href='https://unpkg.com/gridjs/dist/theme/mermaid.min.css' rel='stylesheet'>
+      <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+      <script>
+	document.addEventListener("DOMContentLoaded", function () {
+            new gridjs.Grid({
+		from: document.getElementById('sourceTable'),
+		sort: true,
+		fixedHeader: true,
+		search: true,
+		autoWidth: true,
+		language: {
+                    'search': {
+			'placeholder': '🔍 Search this table...'
+                    }
+		}
+            }).render(document.getElementById('destinationWrapper'));
+	});
+      </script>
+
+      <div id='allPagesTableWrapper'>
+	<div id='destinationWrapper'></div>
+
+	<table id='sourceTable'>
+
+	  <thead>
+	    <tr>
+              <th>Page</th>
+              <th>Change</th>
+              <th>By</th>
+              <th>Date</th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    
+	    <tr>
+              <td><a href="/ghPagesLab/A.R._Moxon_-_What_is_a_socialist.html">A.R. Moxon - What is a socialist</a></td>
+              <td>put all-pages into dolce style</td>
+              <td>Willliam L. Anderson</td>
+              <td>2024-06-09, 20:30</td>
+	    </tr>
+	    <tr>
+              <td><a href="/ghPagesLab/AI_Causes_Real_Harm._Lets_Focus_on_That_over_the_End-of-Humanity_Hype.html">AI Causes Real Harm. Lets Focus on That over the End-of-Humanity Hype</a></td>
+              <td>put all-pages into dolce style</td>
+              <td>Willliam L. Anderson</td>
+              <td>2024-06-09, 20:30</td>
+	    </tr>
+	    <tr>
+              <td><a href="/ghPagesLab/linking_is_like_thinking.html">linking is like thinking</a></td>
+              <td>put all-pages into dolce style</td>
+              <td>Willliam L. Anderson</td>
+              <td>2024-06-09, 20:30</td>
+	    </tr>
+	    <tr>
+              <td><a href="/ghPagesLab/MaryRuefle-Nettles.html">MaryRuefle-Nettles</a></td>
+              <td>put all-pages into dolce style</td>
+              <td>Willliam L. Anderson</td>
+              <td>2024-06-09, 20:30</td>
+	    </tr>
+	    <tr>
+              <td><a href="/ghPagesLab/README.html">README</a></td>
+              <td>put all-pages into dolce style</td>
+              <td>Willliam L. Anderson</td>
+              <td>2024-06-09, 20:30</td>
+	    </tr>
+	    <tr>
+              <td><a href="/ghPagesLab/Sidebar.html">Sidebar</a></td>
+              <td>put all-pages into dolce style</td>
+              <td>Willliam L. Anderson</td>
+              <td>2024-06-09, 20:30</td>
+	    </tr>
+	    <tr>
+              <td><a href="/ghPagesLab/to-do_list_and_notes.html">to-do list and notes</a></td>
+              <td>put all-pages into dolce style</td>
+              <td>Willliam L. Anderson</td>
+              <td>2024-06-09, 20:30</td>
+	    </tr></tbody>
+	</table>
+      </div>
+    </div>
   </div>
+
   <script>// ensure the DOM is loaded, for things that need it
 document.addEventListener('DOMContentLoaded', () => {
 
