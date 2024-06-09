@@ -40,8 +40,8 @@ from mistletoe_renderer.massivewiki import MassiveWikiRenderer
 
 wiki_pagelinks = {}
 
-def markdown_convert(markdown_text, rootdir, fileroot, file_id):
-    with MassiveWikiRenderer(rootdir=rootdir,fileroot=fileroot,wikilinks=wiki_pagelinks,file_id=file_id) as renderer:
+def markdown_convert(markdown_text, rootdir, fileroot, file_id, websiteroot):
+    with MassiveWikiRenderer(rootdir=rootdir,fileroot=fileroot,wikilinks=wiki_pagelinks,file_id=file_id,websiteroot=websiteroot) as renderer:
         return renderer.render(Document(markdown_text))
 
 # set up argparse
@@ -107,13 +107,13 @@ def read_markdown_and_front_matter(path):
     return ''.join(lines), {}
 
 # read and convert Sidebar markdown to HTML
-def sidebar_convert_markdown(path, rootdir, fileroot):
+def sidebar_convert_markdown(path, rootdir, fileroot, websiteroot):
     if path.exists():
         markdown_text, front_matter = read_markdown_and_front_matter(path)
     else:
         markdown_text = ''
     fid = hashlib.md5(Path(path).stem.lower().encode()).hexdigest()
-    return markdown_convert(markdown_text, rootdir, fileroot, fid)
+    return markdown_convert(markdown_text, rootdir, fileroot, fid, websiteroot)
 
 # handle datetime.date serialization for json.dumps()
 def datetime_date_serializer(o):
@@ -222,7 +222,7 @@ def main():
         build_time = datetime.datetime.now(datetime.timezone.utc).strftime("%A, %B %d, %Y at %H:%M UTC")
 
         if 'sidebar' in config:
-            sidebar_body = sidebar_convert_markdown(Path(dir_wiki) / config['sidebar'], rootdir, args.wiki)
+            sidebar_body = sidebar_convert_markdown(Path(dir_wiki) / config['sidebar'], rootdir, args.wiki, websiteroot)
         else:
             sidebar_body = ''
 
@@ -241,7 +241,7 @@ def main():
                 (Path(dir_output+clean_filepath).with_suffix(".json")).write_text(json.dumps(front_matter, indent=2, default=datetime_date_serializer))
                 # render and output HTML
                 file_id = hashlib.md5(Path(file).stem.lower().encode()).hexdigest()
-                markdown_body = markdown_convert(markdown_text, rootdir, args.wiki, file_id)
+                markdown_body = markdown_convert(markdown_text, rootdir, args.wiki, file_id, websiteroot)
                 html = page.render(
                     build_time=build_time,
                     wiki_title=config['wiki_title'],
