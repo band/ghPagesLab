@@ -5,101 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Search - ghPagesLab</title>
-    <link rel="stylesheet" href="/ghPagesLab/mwb-static/css/style.css">
-    <link rel="stylesheet" href="/ghPagesLab/mwb-static/css/custom.css">
+    <link rel="stylesheet" href="/mwb-static/css/style.css">
+    <link rel="stylesheet" href="/mwb-static/css/custom.css">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
-    <script src="/ghPagesLab/lunr-index-1717795641.0808113.js"></script>
+    <script src="/lunr-index-1717961024.4779797.js"></script>
     <script>var index = lunr.Index.load(lunr_index)</script>
     
     
-    <script src="/ghPagesLab/lunr-posts-1717795641.0808113.js"></script>
+    <script src="/lunr-posts-1717961024.4779797.js"></script>
     
   </head>
-  <style> <!-- TODO: move this to a CSS file -->
-    ul#resList{list-style-position: inside;margin-left:3em;}
-    li.item{list-style:none; padding:5px;}
-    div#renderList{margin-top:1.5em;}
-  </style>
-  <body class="has-navbar-fixed-top">
-    <nav class="navbar is-fixed-top is-info" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <div class="is-size-3 is-uppercase has-text-weight-light">ghPagesLab</div>
-    </a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
+<style> <!-- TODO: move this to a CSS file -->
+		 ul#resList{list-style-position: inside;margin-left:3em;}
+ li.item{list-style:none; padding:5px;}
+ div#renderList{margin-top:1.5em;}
+</style>
+<body class="has-navbar-fixed-top">
+  <div id="header">
+    <span id="hamburger-btn" class="hidden">&#9776;</span> ghPagesLab
   </div>
-
-  <div id="navbarBasic" class="navbar-menu">
-    <div class="navbar-start">
-      <div class="navbar-item">
-	<div class="buttons">
-	  <a class="button is-primary" href="/">
-	    <strong>Home</strong>
-	  </a>
-	  <a class="button is-light" href="/all-pages.html">
-	    All Pages
-	  </a>
-	  
-	  <a class="button is-light" onclick="location.href=lunr_posts[Math.floor(Math.random() * lunr_posts.length)].link">
-	    Random Page
-	  </a>
-	  
-	  
-	  <a class="button is-light" href="/search.html">
-	    Search
-	  </a>
-	  
-	</div>
+  <div class="container" id="flex-container">
+    <div id="side-column">
+      <div>
+        <button id="hide-btn">Hide</button>
+        <button id="move-btn" class="hidden">Move to Sidebar</button>
       </div>
-    </div>
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-      </div>
-    </div>
-  </div>
-</nav>
-    <section class="section">
-      <div class="container">
-	<div class="columns">
-	  <div class="sidebar column is-one-fifth">
-            <div class="content markdown-body" style="border-right:1px black solid; padding-right:1em;">
-              <h1>Site Navigation</h1>
-<p><a class="wikilink" href="/ghPagesLab/README.html">Home</a></p>
+      <h1>Site Navigation</h1>
+<p><a class="wikilink" href="/README.html">Home</a></p>
 <p><a href="/ghPagesLab/search.html">Search</a><br />
 <a href="/ghPagesLab/all-pages.html">All Pages</a></p>
 <h2>A wiki page of note</h2>
-<p><a class="wikilink" href="/ghPagesLab/A.R._Moxon_-_What_is_a_socialist.html">A.R. Moxon - What is a socialist</a></p>
+<p><a class="wikilink" href="/A.R._Moxon_-_What_is_a_socialist.html">A.R. Moxon - What is a socialist</a></p>
 
-            </div>
-	  </div>
-	  <div class="column">
-            <div class="content markdown-body">
-	      <h1>Search in ghPagesLab</h1>
-              
-	      <input type="text" placeholder="type search words" id="inputID">
-	      <button type="button" onclick="doSearch();" id="searchButton">Search</button>
-              
-	      <div id="renderList"></div>
-            </div>
-	  </div>
-	</div>
-      </div>
-    </section>
-    <footer class="footer">
+    </div>
+
+    <div id="main-column">
+      <h1>Search in ghPagesLab</h1>
+      
+      <input type="text" placeholder="type search words" id="inputID">
+      <button type="button" onclick="doSearch();" id="searchButton">Search</button>
+      
+      <div id="renderList"></div>
+    </div>
+<!--    <footer class="footer">
   <div class="content has-text-centered">
     <div><strong>ghPagesLab</strong> by the unpaid anderbill.</div>
     <div>Central repository at <a href="https://github.com/band/ghPagesLab">Github pages laboratory</a>.</div>
     <div>Licensed under <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</div>
-    <div><em>Site last updated on Friday, June 07, 2024 at 21:27 UTC.</em></div>
+    <div><em>Site last updated on Sunday, June 09, 2024 at 19:23 UTC.</em></div>
   </div>
-</footer>
+</footer>  -->
     <script>// ensure the DOM is loaded, for things that need it
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -132,59 +88,59 @@ document.addEventListener('DOMContentLoaded', () => {
 });</script>
     <script>
       function doSearch() {
-	let searchString=document.getElementById("inputID").value;
-	var ul = document.createElement('ul');
-	ul.setAttribute('id','resList');
-	const searchResultList = index.search(searchString).map((item) => {
-	  return lunr_posts.find((post) => item.ref === post.link)
-	})
-	render_list = document.getElementById('renderList');
+	  let searchString=document.getElementById("inputID").value;
+	  var ul = document.createElement('ul');
+	  ul.setAttribute('id','resList');
+	  const searchResultList = index.search(searchString).map((item) => {
+	      return lunr_posts.find((post) => item.ref === post.link)
+	  })
+	  render_list = document.getElementById('renderList');
 
-	// clear any previous results, then populate results
-	removeAllChildNodes(render_list);
-	render_list.appendChild(ul);
-	searchResultList.forEach(renderResultList);
-        if (ul.childNodes.length == 0) {
-          render_list.append('No results for "' + searchString + '"')
-	}
+	  // clear any previous results, then populate results
+	  removeAllChildNodes(render_list);
+	  render_list.appendChild(ul);
+	  searchResultList.forEach(renderResultList);
+          if (ul.childNodes.length == 0) {
+              render_list.append('No results for "' + searchString + '"')
+	  }
 
-	// helper to set a single result (in scope of doSearch())
-	function renderResultList(element, index, arr) {
-	  var anchor = document.createElement('a');
-	  anchor.append(document.createTextNode(`${element.title}`));
-	  anchor.setAttribute('class', 'wikilink');
-	  anchor.setAttribute('href',`${element.link}`);
-	  anchor.setAttribute('target', '_blank');
-	  var li = document.createElement('li');
-	  li.setAttribute('class','item');
-	  li.append(anchor);
-	  ul.append(li);
-	}
+	  // helper to set a single result (in scope of doSearch())
+	  function renderResultList(element, index, arr) {
+	      var anchor = document.createElement('a');
+	      anchor.append(document.createTextNode(`${element.title}`));
+	      anchor.setAttribute('class', 'wikilink');
+	      anchor.setAttribute('href',`${element.link}`);
+	      anchor.setAttribute('target', '_blank');
+	      var li = document.createElement('li');
+	      li.setAttribute('class','item');
+	      li.append(anchor);
+	      ul.append(li);
+	  }
       }
 
       // helper to clear previous search results
       function removeAllChildNodes(parent) {
-	while (parent.firstChild) {
-	  parent.removeChild(parent.firstChild);
-	}
+	  while (parent.firstChild) {
+	      parent.removeChild(parent.firstChild);
+	  }
       }
 
       // ensure the DOM is loaded
       document.addEventListener('DOMContentLoaded', () => {
-	// search on Enter
-	var input_id = document.getElementById('inputID')
-	input_id.focus()
-	input_id.addEventListener('keypress', function(event) {
-	  if (event.key === "Enter") {
-	    event.preventDefault();
-	    document.getElementById("searchButton").click();
-	  }
-	});
+	  // search on Enter
+	  var input_id = document.getElementById('inputID')
+	  input_id.focus()
+	  input_id.addEventListener('keypress', function(event) {
+	      if (event.key === "Enter") {
+		  event.preventDefault();
+		  document.getElementById("searchButton").click();
+	      }
+	  });
       })
     </script>
 
-<!-- uncomment to add Hypothes.is
-    <script src="https://hypothes.is/embed.js" async></script>
--->
-  </body>
+    <!-- uncomment to add Hypothes.is
+	 <script src="https://hypothes.is/embed.js" async></script>
+	 -->
+</body>
 </html>
