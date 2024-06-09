@@ -17,6 +17,7 @@
       {{ sidebar_body }}
     </div>
 
+    <div id="websiteroot">{{websiteroot}}</div>
     <div id="main-column">
       <h1>Search in {{wiki_title}}</h1>
       {% if lunr_index_sitepath != '' %}
@@ -31,6 +32,7 @@
 <!--    {% include '_footer.html' %}  -->
     <script>{% include '_javascript.html' %}</script>
     <script>
+      const websiteroot = document.getElementById("websiteroot");
       function doSearch() {
 	  let searchString=document.getElementById("inputID").value;
 	  var ul = document.createElement('ul');
@@ -53,7 +55,7 @@
 	      var anchor = document.createElement('a');
 	      anchor.append(document.createTextNode(`${element.title}`));
 	      anchor.setAttribute('class', 'wikilink');
-	      anchor.setAttribute('href',`${element.link}`);
+	      anchor.setAttribute('href',`${websiteroot}/${element.link}`);
 	      anchor.setAttribute('target', '_blank');
 	      var li = document.createElement('li');
 	      li.setAttribute('class','item');
