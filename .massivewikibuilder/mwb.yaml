@@ -17,5 +17,5 @@ recent_changes_count: 5
 sidebar: Sidebar.md
 
 # the name of the website root directory
-#webrootdir: '/ghPagesLab'
-webrootdir: ''
+webrootdir: '/ghPagesLab'
+#webrootdir: ''
