@@ -2,8 +2,8 @@
 
 [[README|Home]]  
 
-[Search](/ghPagesLab/search.html)  
-[All Pages](/ghPagesLab/all-pages.html)  
+[Search](/search.html)  
+[All Pages](/all-pages.html)  
 
 ## A wiki page of note
 
