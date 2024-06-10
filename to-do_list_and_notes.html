@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="/ghPagesLab/mwb-static/css/custom.css">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
-    <script src="/ghPagesLab/lunr-index-1718045115.6546361.js"></script>
+    <script src="/ghPagesLab/lunr-index-1718047197.2541766.js"></script>
     <script>var index = lunr.Index.load(lunr_index)</script>
     
     
-    <script src="/ghPagesLab/lunr-posts-1718045115.6546361.js"></script>
+    <script src="/ghPagesLab/lunr-posts-1718047197.2541766.js"></script>
     
   </head>
 <body>
@@ -73,6 +73,40 @@
 <ul>
 <li>specifically, the website root directory and it's place in links and wikilinks -- it takes some thinking ....</li>
 </ul>
+</li>
+</ul>
+<p>2024-06-09:</p>
+<ul>
+<li>
+<p>figured out my own Python coding error and with some hard-coding on
+the not-wikilinks local pages links in the Sidebar.md file gh-pages
+works. The local page links issue needs a solution.</p>
+</li>
+<li>
+<p>i made one pass at updating all-pages.html to fit with the dolce
+theme, but the sidebar is not displaying.</p>
+</li>
+<li>
+<p>next step is to sort the local webpage link problem.</p>
+</li>
+<li>
+<p>also, update all the links that require <code>websiteroot</code></p>
+</li>
+</ul>
+<p>2024-06-10:</p>
+<ul>
+<li>
+<p>websiteroot parameterized in most of the code<br />
+TODO: update all the hrefs generated in MassiveWikiRenderer</p>
+</li>
+<li>
+<p>decided on adding websiteroot to the command-line arguments<br />
+rationale: only need to change <code>gh-pages.yml</code> file; <code>netlify.toml</code>
+can stay the same.</p>
+</li>
+<li>
+<p>the current test wiki and Obsidian vault only has a few files in
+it; further testing required.</p>
 </li>
 </ul>
 
