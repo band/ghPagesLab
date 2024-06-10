@@ -19,7 +19,7 @@ class LocalLink(SpanToken):
     """
     defines link to a local html page
     """
-    pattern = r'\[(.*?)\]\(\/(.*?)\)'
+    pattern = re.compile(r"\[(.*?)\]\(\/(.*?)\)")
 
     def __init__(self, match):
         self.target = match.group(2)
@@ -81,10 +81,10 @@ class MassiveWikiRenderer(HTMLRenderer):
         self._websiteroot = websiteroot
 
     def render_local_link(self, token):
-        logging.debug("WIKILINKED token: %s", token)
+        logging.debug("LOCALLINKED token: %s", token)
         target = token.target
-        logging.debug("WIKILINKED token.target: %s", token.target)
-        logging.debug("WIKILINKED inner(token): %s", self.render_inner(token))
+        logging.debug("LOCALLINKED token.target: %s", token.target)
+        logging.debug("LOCALLINKED inner(token): %s", self.render_inner(token))
         template = '<a href="{websiteroot}{rootdir}{inner}">{target}</a>'
         return template.format(target=target, inner=inner, rootdir=self._rootdir, websiteroot=self._websiteroot)
 
