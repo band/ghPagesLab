@@ -13,16 +13,7 @@ from pathlib import Path
 import html
 import re
 
-__all__ = ['LocalLink', 'DoubleSquareBracketLink', 'EmbeddedImageDoubleSquareBracketLink', 'TranscludedDoubleSquareBracketLink', 'MassiveWikiRenderer']
-
-class LocalLink(SpanToken):
-    """
-    defines link to a local html page
-    """
-    pattern = re.compile(r"\[(.*?)\]\(\/(.*?)\)")
-
-    def __init__(self, match):
-        self.target = match.group(2)
+__all__ = ['DoubleSquareBracketLink', 'EmbeddedImageDoubleSquareBracketLink', 'TranscludedDoubleSquareBracketLink', 'MassiveWikiRenderer']
 
 class DoubleSquareBracketLink(SpanToken):
     """
@@ -79,14 +70,6 @@ class MassiveWikiRenderer(HTMLRenderer):
         self._tc_dict = dict.fromkeys([self._file_id], [])
         self._tc_dict[self._file_id].append(self._file_id)
         self._websiteroot = websiteroot
-
-    def render_local_link(self, token):
-        logging.debug("LOCALLINKED token: %s", token)
-        target = token.target
-        logging.debug("LOCALLINKED token.target: %s", token.target)
-        logging.debug("LOCALLINKED inner(token): %s", self.render_inner(token))
-        template = '<a href="{websiteroot}{rootdir}{inner}">{target}</a>'
-        return template.format(target=target, inner=inner, rootdir=self._rootdir, websiteroot=self._websiteroot)
 
     def render_double_square_bracket_link(self, token):
         logging.debug("WIKILINKED token: %s", token)
