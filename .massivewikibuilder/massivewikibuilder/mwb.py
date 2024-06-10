@@ -114,7 +114,7 @@ def sidebar_convert_markdown(path, rootdir, fileroot, websiteroot):
     else:
         markdown_text = ''
     fid = hashlib.md5(Path(path).stem.lower().encode()).hexdigest()
-    # incorporate websiteroot into local webpages
+    # incorporate websiteroot into local webpage links
     locallink_pattern = r'(\[.*?\])\(\/(.*?\.html)\)'
     locallink_replacement = rf'\1({websiteroot}/\2)'
     sidebar_markdown_text = re.sub(locallink_pattern, locallink_replacement, markdown_text)
