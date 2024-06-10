@@ -28,15 +28,20 @@
  - also, update all the links that require `websiteroot`  
 
 2024-06-10:  
- - websiteroot parameterized in most of the code  
- TODO: update all the hrefs generated in MassiveWikiRenderer  
+ - `websiteroot` parameterized in most of the code  
+ TODO: update all the `hrefs` generated in MassiveWikiRenderer  
  
- - decided on adding websiteroot to the command-line arguments  
+ - decided on adding `websiteroot` to the command-line arguments  
    rationale: only need to change `gh-pages.yml` file; `netlify.toml`
    can stay the same.  
    
- - the current test wiki and Obsidian vault only has a few files in
+ - TODO: the current test wiki and Obsidian vault only has a few files in
    it; further testing required.  
+
+ - some other thoughts:  
+	 - another rationale for command-line `websiteroot` specification is that `mwb.yaml` can be used for multiple web publication sites without change  
+	 - Note: this does mean that PyPI module initialization might need to query for expected deployment method (and where would that info go if not into `mwb.yaml`?)  
+	 - there are questions to be resolved about how to help the user of the system set up, or modify already set up, configurations.  
    
 
  
