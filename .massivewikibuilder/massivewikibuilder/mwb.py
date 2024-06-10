@@ -51,6 +51,7 @@ def init_argparse():
     parser.add_argument('--output', '-o', required=True, help='directory for output')
     parser.add_argument('--templates', '-t', required=True, help='directory for HTML templates')
     parser.add_argument('--wiki', '-w', required=True, help='directory containing wiki files (Markdown + other)')
+    parser.add_argument('--root', '-r', default='', help='name to be used for website root directory (used to host on Github Pages')    
     parser.add_argument('--lunr', action='store_true', help='include this to create lunr index (requires npm and lunr to be installed, read docs)')
     parser.add_argument('--commits', action='store_true', help='include this to read Git commit messages and times, for All Pages')
     return parser
@@ -141,8 +142,7 @@ def main():
     dir_templates = Path(args.templates).resolve().as_posix()
     rootdir = '/'
     dir_output = Path(args.output).resolve().as_posix()
-    logging.debug("website root directory: %s", config['webrootdir'])
-    websiteroot = config['webrootdir']
+    websiteroot = args.root
     logging.debug("websiteroot: %s", websiteroot)
     logging.debug("dir_output: %s", dir_output)
 

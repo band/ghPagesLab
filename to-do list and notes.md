@@ -16,3 +16,27 @@
 2024-06-07:  
  - with PK's help we have some notions of clarifying the properties our model of a MassiveWiki and associated static website  
 	 - specifically, the website root directory and it's place in links and wikilinks -- it takes some thinking ....
+
+2024-06-09:
+ - figured out my own Python coding error and with some hard-coding on
+   the not-wikilinks local pages links in the Sidebar.md file gh-pages
+   works. The local page links issue needs a solution.  
+ - i made one pass at updating all-pages.html to fit with the dolce
+   theme, but the sidebar is not displaying.  
+   
+ - next step is to sort the local webpage link problem.
+ - also, update all the links that require `websiteroot`  
+
+2024-06-10:  
+ - websiteroot parameterized in most of the code  
+ TODO: update all the hrefs generated in MassiveWikiRenderer  
+ 
+ - decided on adding websiteroot to the command-line arguments  
+   rationale: only need to change `gh-pages.yml` file; `netlify.toml`
+   can stay the same.  
+   
+ - the current test wiki and Obsidian vault only has a few files in
+   it; further testing required.  
+   
+
+ 
