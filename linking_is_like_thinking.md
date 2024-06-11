@@ -11,7 +11,7 @@
 
 2024-06-11: two test cases  
 
-1. embed an image:  
+1. embed an image (Ada Limon poem excerpt):    
 ![[Limon_2016_NotesOnTheBelow.png]]  
 
 2. transclude a page:  
