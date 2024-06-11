@@ -7,4 +7,4 @@
 
 ## A wiki page of note
 
-[[A.R. Moxon - What is a socialist]]  
+[[AR Moxon - What is a socialist]]  

@@ -2,7 +2,7 @@
 - as is imagining and dreaming  
 
 - believing that society exists: 
-[[A.R. Moxon - What is a socialist]]  
+[[AR Moxon - What is a socialist]]  
 
 [[Bruno Schulz - The Book]]  
 
