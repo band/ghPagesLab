@@ -91,7 +91,7 @@ class MassiveWikiRenderer(HTMLRenderer):
 
     def render_embedded_image_double_square_bracket_link(self, token):
         logging.debug("EMBEDDED token: %s", token)
-        template = '<img src="{rootdir}{inner}" alt="{target}" />'
+        template = '<img src="{websiteroot}{rootdir}{inner}" alt="{target}" />'
         target = token.target
         if not target:
             target = "an image with no alt text"
@@ -107,7 +107,7 @@ class MassiveWikiRenderer(HTMLRenderer):
         else:
             inner = token.content
         logging.debug("EMBEDDED inner: %s", inner)
-        return template.format(target=target, inner=inner, rootdir=self._rootdir)
+        return template.format(target=target, inner=inner, rootdir=self._rootdir, websiteroot=self._websiteroot)
 
     def render_transcluded_double_square_bracket_link(self, token):
         logging.debug("TRANSCLUDED file_id: %s", self._file_id)
