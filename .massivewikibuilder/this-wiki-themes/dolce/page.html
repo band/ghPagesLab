@@ -15,6 +15,17 @@
 
     <div id="main-column">
       {{ markdown_body }}
+      {% if backlinks %}
+      <hr>
+      <div>
+	<h4>Pages that link to this page</h4>
+	<ul>
+	  {% for link in backlinks %}
+	  <li><a href="{{link[0]}}">{{link[1]}}</a>
+	    {%- endfor -%}
+	</ul>
+      </div>
+      {% endif %}
     </div>
   </div>
   <script src="{{websiteroot}}/mwb-static/js/script.js"></script>
