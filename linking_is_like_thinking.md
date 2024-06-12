@@ -2,7 +2,12 @@
 - as is imagining and dreaming  
 
 - believing that society exists: 
-[[A.R. Moxon - What is a socialist]]  
+[[AR Moxon - What is a socialist]]  
+
+[[Bruno Schulz - The Book]]  
+
+-----
+
 
 2024-06-03:  
 / so maybe I need to adjust my view on groups and collective intelligence //  
