@@ -26,13 +26,11 @@
       <p>Lunr search index is not present. It must be enabled by passing the <code>--lunr</code> flag to <code>mwb.py</code>.</p>
       <p>Check the Massive Wiki Builder documentation for more details.</p>
       {% endif %}
-      <div id="websiteroot">{{websiteroot}}</div>
       <div id="renderList"></div>
     </div>
 <!--    {% include '_footer.html' %}  -->
     <script>{% include '_javascript.html' %}</script>
     <script>
-      const websiteroot = document.getElementById("websiteroot").textContent;
       function doSearch() {
 	  let searchString=document.getElementById("inputID").value;
 	  var ul = document.createElement('ul');
@@ -55,7 +53,7 @@
 	      var anchor = document.createElement('a');
 	      anchor.append(document.createTextNode(`${element.title}`));
 	      anchor.setAttribute('class', 'wikilink');
-	      anchor.setAttribute('href',`${websiteroot}/${element.link}`);
+	      anchor.setAttribute('href',`${element.link}`);
 	      anchor.setAttribute('target', '_blank');
 	      var li = document.createElement('li');
 	      li.setAttribute('class','item');
