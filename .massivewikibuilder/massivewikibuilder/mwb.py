@@ -42,7 +42,11 @@ wiki_pagelinks = {}
 
 def markdown_convert(markdown_text, rootdir, fileroot, file_id, websiteroot):
     with MassiveWikiRenderer(rootdir=rootdir,fileroot=fileroot,wikilinks=wiki_pagelinks,file_id=file_id,websiteroot=websiteroot) as renderer:
-        return renderer.render(Document(markdown_text))
+        # incorporate websiteroot into local website page links
+        locallink_pattern = r'(\[.*?\])\(\/(.*?\.html)\)'
+        locallink_replacement = rf'\1({websiteroot}/\2)'
+        page__markdown_text = re.sub(locallink_pattern, locallink_replacement, markdown_text)
+        return renderer.render(Document(page_markdown_text))
 
 # set up argparse
 def init_argparse():
@@ -114,11 +118,7 @@ def sidebar_convert_markdown(path, rootdir, fileroot, websiteroot):
     else:
         markdown_text = ''
     fid = hashlib.md5(Path(path).stem.lower().encode()).hexdigest()
-    # incorporate websiteroot into local webpage links
-    locallink_pattern = r'(\[.*?\])\(\/(.*?\.html)\)'
-    locallink_replacement = rf'\1({websiteroot}/\2)'
-    sidebar_markdown_text = re.sub(locallink_pattern, locallink_replacement, markdown_text)
-    return markdown_convert(sidebar_markdown_text, rootdir, fileroot, fid, websiteroot)
+    return markdown_convert(markdown_text, rootdir, fileroot, fid, websiteroot)
 
 # handle datetime.date serialization for json.dumps()
 def datetime_date_serializer(o):
