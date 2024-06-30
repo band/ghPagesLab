@@ -45,7 +45,7 @@ def markdown_convert(markdown_text, rootdir, fileroot, file_id, websiteroot):
         # incorporate websiteroot into local website page links
         locallink_pattern = r'(\[.*?\])\(\/(.*?\.html)\)'
         locallink_replacement = rf'\1({websiteroot}/\2)'
-        page__markdown_text = re.sub(locallink_pattern, locallink_replacement, markdown_text)
+        page_markdown_text = re.sub(locallink_pattern, locallink_replacement, markdown_text)
         return renderer.render(Document(page_markdown_text))
 
 # set up argparse
